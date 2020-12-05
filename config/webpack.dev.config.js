@@ -1,12 +1,13 @@
 const path = require('path'),
   webpack = require('webpack'),
-  HtmlWebpackPlugin = require('html-webpack-plugin');
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
+  ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const APP_PATH = path.resolve(__dirname, '../src');
 
 module.exports = {
   entry: APP_PATH,
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: 'js/[name].bundle.js',
   },
   devtool: 'source-map',
@@ -20,7 +21,7 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        loader: 'ts-loader',
+        loader: 'babel-loader',
         exclude: /node_modules/,
       },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
@@ -42,5 +43,6 @@ module.exports = {
       },
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new ForkTsCheckerWebpackPlugin(),
   ],
 };
