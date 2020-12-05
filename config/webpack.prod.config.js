@@ -5,10 +5,11 @@ const path = require('path'),
 const APP_PATH = path.resolve(__dirname, '../src');
 
 module.exports = {
+  mode: 'production',
   entry: APP_PATH,
   output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: 'js/[name].bundle.js',
+    path: path.resolve(__dirname, '../dist', 'js'),
+    filename: '[name].[contenthash].bundle.js',
   },
   devtool: 'source-map',
   devServer: {
@@ -24,7 +25,6 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
-      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
     ],
   },
   plugins: [
