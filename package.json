@@ -4,8 +4,8 @@
   "description": "react-ts",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "devbuild": "webpack --mode development",
+    "start": "webpack-dev-server --mode development --config config/webpack.dev.config.js",
+    "clean": "rm -rf dist",
     "build": "webpack --mode production",
     "test": "jest"
   },
