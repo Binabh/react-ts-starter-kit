@@ -1,5 +1,4 @@
 import React from 'react';
-
 export interface HelloWorldProps {
   firstName: string;
   lastName: string;

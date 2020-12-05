@@ -1,6 +1,12 @@
 import React from 'react';
-import HelloWorld from './components/HelloWorld/';
+import ImageViewer from 'src/components/common/ImageViewer/';
+import 'src/assets/css/main.css';
+import HelloWorld from 'src/components/HelloWorld/';
 
 export default function App() {
-  return <HelloWorld firstName={'Jon'} lastName={'Doe'} />;
+  return (
+    <>
+      <HelloWorld firstName={'John'} lastName={'Doe'} />
+    </>
+  );
 }
