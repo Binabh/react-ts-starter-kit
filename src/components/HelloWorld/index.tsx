@@ -1,11 +1,12 @@
 import React from 'react';
+
 export interface HelloWorldProps {
   firstName: string;
   lastName: string;
 }
-const HelloWorld = (props: HelloWorldProps) => (
+const HelloWorld = ({ firstName, lastName }: HelloWorldProps) => (
   <h1>
-    Hello {props.firstName} {props.lastName}!
+    Hello {firstName} {lastName}!
   </h1>
 );
 export default HelloWorld;

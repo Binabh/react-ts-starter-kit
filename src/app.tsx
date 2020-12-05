@@ -5,7 +5,7 @@ import HelloWorld from 'src/components/HelloWorld/';
 export default function App() {
   return (
     <>
-      <HelloWorld firstName={'John'} lastName={'Doe'} />
+      <HelloWorld firstName="John" lastName="Doe" />
       <ImageViewer />
     </>
   );
