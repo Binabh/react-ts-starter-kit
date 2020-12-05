@@ -6,8 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --config config/webpack.dev.config.js",
     "clean": "rm -rf dist",
-    "build": "webpack --progress --mode production",
-    "test": "jest"
+    "build": "webpack --progress --mode production --config config/webpack.prod.config.js"
   },
   "author": "Binabh",
   "license": "MIT",
