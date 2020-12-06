@@ -1,14 +1,24 @@
 import React from 'react';
-import SvgViewer from 'src/components/common/SvgViewer/';
-import ImageViewer from 'src/components/common/ImageViewer/';
-import HelloWorld from 'src/components/HelloWorld/';
+import { Switch, Route, HashRouter as Router } from 'react-router-dom';
+import appRoutes, { RouteType } from 'src/routes/';
 
-export default function App() {
+function App() {
   return (
     <>
-      <HelloWorld firstName="John" lastName="Doe" />
-      <ImageViewer />
-      <SvgViewer />
+      <Router>
+        <Switch>
+          {appRoutes.map((route: RouteType) => (
+            <Route
+              component={route.component}
+              exact={route.exact || false}
+              path={route.path}
+              key={route.name}
+            />
+          ))}
+        </Switch>
+      </Router>
     </>
   );
 }
+
+export default App;
