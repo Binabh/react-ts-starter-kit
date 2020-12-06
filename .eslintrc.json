@@ -40,7 +40,10 @@
   "settings": {
     "import/resolver": {
       "webpack": {
-        "config": "config/webpack.dev.config.js"
+        "config": "./webpack.config.js",
+        "env":{
+          "MODE": "dev"
+        }
       },
       "typescript": {
       }

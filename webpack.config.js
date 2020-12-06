@@ -22,6 +22,12 @@ baseConfig = {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.(ts|tsx|js)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      },
+      {
         test: /\.(ts|tsx|js)$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
