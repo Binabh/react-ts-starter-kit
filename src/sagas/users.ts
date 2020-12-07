@@ -1,9 +1,11 @@
-import { put, takeLatest } from 'redux-saga/effects';
-import { getUserRequest, getUserSuccess, getUserFailure } from 'src/slicers/users';
+import { call, put, takeLatest } from 'redux-saga/effects';
+import { getUser } from 'src/services/users';
+import { getUserRequest, getUserSuccess, getUserFailure } from 'src/slices/users';
 
 function* getUserTask() {
   try {
-    yield put(getUserSuccess({ name: 'ok', city: 'ok' }));
+    const response = yield call(getUser);
+    yield put(getUserSuccess(response.data));
   } catch (error) {
     yield put(getUserFailure());
   }

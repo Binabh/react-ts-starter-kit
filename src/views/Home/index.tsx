@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { getUserRequest } from 'src/slicers/users';
+import { getUserRequest } from 'src/slices/users';
 
 function Home() {
   const dispatch = useDispatch();

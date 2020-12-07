@@ -4,7 +4,7 @@
 import createSagaMiddleware from 'redux-saga';
 import { applyMiddleware, compose, createStore } from 'redux';
 import rootSaga from 'src/sagas';
-import createReducer from './slicers';
+import createReducer from './slices';
 
 const initialState = {};
 const sagaMiddleware = createSagaMiddleware();
@@ -32,8 +32,8 @@ export default function configureStore() {
   let sagaTask = sagaMiddleware.run(rootSaga);
 
   if (module.hot) {
-    module.hot.accept('./slicers', () => {
-      const nextRootReducer = require('./slicers').default;
+    module.hot.accept('./slices', () => {
+      const nextRootReducer = require('./slices').default;
       store.replaceReducer(nextRootReducer);
     });
     module.hot.accept('./sagas', () => {
