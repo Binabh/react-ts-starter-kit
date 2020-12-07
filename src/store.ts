@@ -3,7 +3,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import createSagaMiddleware from 'redux-saga';
 import { applyMiddleware, compose, createStore } from 'redux';
-import { createInjectorsEnhancer } from 'redux-injectors';
 import rootSaga from 'src/sagas';
 import createReducer from './slicers';
 
