@@ -1,10 +1,13 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import userReducer from './users';
 
-const rootReducer = combineReducers({
-  user: userReducer,
-});
+function createReducer(injectedReducers = {}) {
+  const rootReducer = combineReducers({
+    user: userReducer,
+    ...injectedReducers,
+  });
+  return rootReducer;
+}
+export type RootState = ReturnType<typeof createReducer>;
 
-export type RootState = ReturnType<typeof rootReducer>;
-
-export default rootReducer;
+export default createReducer;
