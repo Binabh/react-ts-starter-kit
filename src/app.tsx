@@ -1,13 +1,13 @@
 import React from 'react';
 import { Switch, Route, HashRouter as Router } from 'react-router-dom';
-import appRoutes, { RouteType } from 'src/routes/';
+import appRoutes from 'src/routes/';
 
 function App() {
   return (
     <>
       <Router>
         <Switch>
-          {appRoutes.map((route: RouteType) => (
+          {appRoutes.map((route) => (
             <Route
               component={route.component}
               exact={route.exact || false}

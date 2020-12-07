@@ -2,13 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "src": ["src/*"],
+      "src": ["src/*"]
     },
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "jsx": "react",
     "module": "commonjs",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "outDir": "./build/",
     "preserveConstEnums": true,
     "removeComments": true,

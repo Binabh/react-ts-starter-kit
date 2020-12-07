@@ -1,6 +1,6 @@
 import About from 'src/views/About/';
 import Home from 'src/views/Home/';
-import { RouteType } from './index';
+import { RouteType } from './routes.d';
 
 const indexRoutes: Array<RouteType> = [
   {

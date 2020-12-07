@@ -1,20 +1,19 @@
-import { applyMiddleware, compose, createStore } from 'redux';
-import createSagaMiddleware from 'redux-saga';
-import reducers from './reducers';
-import rootSaga from './sagas';
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-var-requires */
+import { configureStore } from '@reduxjs/toolkit';
+import rootReducer from './slicers';
 
-const initialState = {};
-const sagaMiddleware = createSagaMiddleware();
+const store = configureStore({
+  reducer: rootReducer,
+});
 
-export default function configureStore() {
-  const middlewares = [sagaMiddleware];
-  const composeEnhancers = compose;
-
-  const store = createStore(
-    reducers,
-    initialState,
-    composeEnhancers(applyMiddleware(...middlewares)),
-  );
-  sagaMiddleware.run(rootSaga);
-  return { store };
+if (process.env.NODE_ENV === 'development' && module.hot) {
+  module.hot.accept('./slicers', () => {
+    const newRootReducer = require('./slicers').default;
+    store.replaceReducer(newRootReducer);
+  });
 }
+
+export type AppDispatch = typeof store.dispatch;
+
+export default store;

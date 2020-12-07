@@ -3,7 +3,13 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:prettier/recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended", "airbnb"],
+  "extends": [
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "airbnb"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -18,7 +24,11 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "react/jsx-one-expression-per-line": "off",
-    "no-use-before-define":"off",
+    "no-use-before-define": "off",
+    "no-param-reassign": "off",
+    "no-unused-vars": "off",
+    "camelcase": "off",
+    "@typescript-eslint/no-unused-vars": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-filename-extension": [
@@ -39,14 +49,16 @@
   },
   "settings": {
     "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
       "webpack": {
         "config": "./webpack.config.js",
-        "env":{
+        "env": {
           "MODE": "dev"
         }
       },
-      "typescript": {
-      }
+      "typescript": {}
     }
   }
 }
