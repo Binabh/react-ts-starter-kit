@@ -1,8 +1,7 @@
 {
-  "name": "react-ts",
+  "name": "react-ts-starter-kit",
   "version": "1.0.0",
-  "description": "react-ts",
-  "main": "index.js",
+  "description": "Starter kit for react using typescript",
   "scripts": {
     "start": "webpack-dev-server --env.MODE=dev",
     "clean": "rm -rf dist",
