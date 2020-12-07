@@ -25,9 +25,17 @@ const userSlice = createSlice({
     getUserRequest(state) {
       state.loading = true;
     },
+    getUserSuccess(state, { payload }: PayloadAction<User>) {
+      state.user.city = payload.city;
+      state.user.name = payload.name;
+      state.loading = false;
+    },
+    getUserFailure(state) {
+      state.loading = false;
+    },
   },
 });
 
-export const { getUserRequest } = userSlice.actions;
+export const { getUserRequest, getUserFailure, getUserSuccess } = userSlice.actions;
 
 export default userSlice.reducer;

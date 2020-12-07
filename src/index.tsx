@@ -10,7 +10,7 @@ import App from './app';
 function render() {
   ReactDOM.render(
     <Provider store={store}>
-      <App />,
+      <App />
     </Provider>,
     document.getElementById('content'),
   );
