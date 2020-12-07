@@ -7,7 +7,7 @@ function Home() {
   return (
     <>
       <h1>Home</h1>
-      <button type="button" onClick={() => dispatch(getUserRequest())}>
+      <button type="button" onClick={() => dispatch(getUserRequest('ce5f60e2'))}>
         click
       </button>
     </>

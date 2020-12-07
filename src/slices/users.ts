@@ -22,7 +22,7 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    getUserRequest(state) {
+    getUserRequest(state, { payload }: PayloadAction<string>) {
       state.loading = true;
     },
     getUserSuccess(state, { payload }: PayloadAction<User>) {
