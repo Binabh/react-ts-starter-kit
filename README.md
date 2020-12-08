@@ -12,14 +12,14 @@
 
 ```
   -- src/
-    -- actions/      -->  for redux actions
+    -- @types/       -->  for custom typecsript types
     -- assets/       -->  for static assets and styles
     -- components/   -->  for components
         -- common/   -->  for shared components
-    -- reducers/     -->  for redux reducers
     -- routes/       -->  for all routes
     -- sagas/        -->  for redux sagas
     -- services/     -->  for api requests
+    -- slices/       -->  for slices created using @reduxjs/toolkit
     -- utils/        -->  for utility / helper functions
     -- views/        -->  for page specific/container components
 ```
@@ -33,6 +33,7 @@ Here are list of libraries being used in this project:
 - [Redux](https://redux.js.org/) for state management
 - [Redux Saga](https://redux-saga.js.org/) for managing side-effect tasks
 - [Axios](https://github.com/axios/axios) for making api calls
+- [Redux Toolkit](https://redux-toolkit.js.org/) for consise redux code
 
 Styling and linting
 
