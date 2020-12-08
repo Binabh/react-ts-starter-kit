@@ -5,7 +5,7 @@ interface User {
   name: string;
 }
 
-type UserState = {
+export type UserState = {
   user: User;
   loading: boolean;
 };
