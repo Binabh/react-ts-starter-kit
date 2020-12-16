@@ -1,6 +1,3 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable global-require */
-/* eslint-disable @typescript-eslint/no-var-requires */
 import createSagaMiddleware from 'redux-saga';
 import { applyMiddleware, compose, createStore } from 'redux';
 import rootSaga from 'src/sagas';
@@ -15,6 +12,7 @@ export default function configureStore() {
   let composeEnhancers = compose;
 
   if (ENV !== 'production') {
+    /* eslint-disable operator-linebreak */
     const composeWithDevToolsExtension =
       (window && ((window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ as typeof compose)) ||
       compose;
@@ -33,11 +31,11 @@ export default function configureStore() {
 
   if (module.hot) {
     module.hot.accept('./slices', () => {
-      const nextRootReducer = require('./slices').default;
+      const nextRootReducer = createReducer();
       store.replaceReducer(nextRootReducer);
     });
     module.hot.accept('./sagas', () => {
-      const nextRootSaga = require('./sagas').default;
+      const nextRootSaga = rootSaga;
       sagaTask.cancel();
       sagaTask.toPromise().then(() => {
         sagaTask = sagaMiddleware.run(nextRootSaga);
