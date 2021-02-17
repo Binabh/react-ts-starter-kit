@@ -17,7 +17,7 @@ function generateRoutes(routes: Array<RouteType>) {
           </Route>
         ) : (
           <Route
-            component={route.component as React.FC | React.ComponentClass}
+            component={route.component}
             exact={route.exact || false}
             path={route.path}
             key={route.name}
