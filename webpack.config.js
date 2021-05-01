@@ -5,9 +5,9 @@ const path = require('path'),
   devConfig = require('./config/webpack.dev.config'),
   prodConfig = require('./config/webpack.prod.config');
 
-const APP_PATH = path.resolve(__dirname, './src');
-const DIST_PATH = path.resolve(__dirname, './dist');
-const TEMPLETE_PATH = path.resolve(__dirname, './public', 'index.html');
+const APP_PATH = path.resolve(__dirname, '.', 'src');
+const DIST_PATH = path.resolve(__dirname, '.', 'dist');
+const TEMPLETE_PATH = path.resolve(__dirname, '.', 'public', 'index.html');
 
 baseConfig = {
   entry: APP_PATH,
