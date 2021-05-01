@@ -6,7 +6,13 @@
 1.  Clone repo using `git clone https://github.com/<github-username>/react-ts-starter-kit.git`
 2.  Move to the project directory: `cd react-ts-starter-kit`.<br />
 3.  Run `npm i` in order to install dependencies.<br />
-4.  Now you can run `npm start` to see the app at `http://localhost:8080`
+4.  Create new file in root directory named `.env` and add following lines:<br />
+
+```
+TITLE = "React Typescript Starter Kit"
+```
+
+5.  Now you can run `npm start` to see the app at `http://localhost:8080`
 
 ## Folder Structure
 

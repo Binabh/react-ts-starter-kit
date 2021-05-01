@@ -2,12 +2,14 @@ const path = require('path'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin'),
   merge = require('webpack-merge'),
+  dotenv = require('dotenv').config(),
   devConfig = require('./config/webpack.dev.config'),
   prodConfig = require('./config/webpack.prod.config');
 
 const APP_PATH = path.resolve(__dirname, '.', 'src');
 const DIST_PATH = path.resolve(__dirname, '.', 'dist');
 const TEMPLETE_PATH = path.resolve(__dirname, '.', 'public', 'index.html');
+const { TITLE } = dotenv.parsed;
 
 baseConfig = {
   entry: APP_PATH,
@@ -68,7 +70,7 @@ baseConfig = {
     new HtmlWebpackPlugin({
       template: TEMPLETE_PATH,
       filename: 'index.html',
-      title: 'react-ts',
+      title: TITLE,
       minify: {
         collapseWhitespace: true,
         collapseInlineTagWhitespace: true,

@@ -27,6 +27,7 @@
     "@typescript-eslint/parser": "^4.9.0",
     "babel-loader": "8.2.1",
     "css-loader": "^5.0.1",
+    "dotenv": "^8.2.0",
     "eslint": "^7.15.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
@@ -57,7 +58,6 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
     "axios": "^0.21.1",
-    "dotenv": "^8.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
