@@ -40,8 +40,10 @@ Here are list of libraries being used in this project:
 - [Redux Saga](https://redux-saga.js.org/) for managing side-effect tasks
 - [Axios](https://github.com/axios/axios) for making api calls
 - [Redux Toolkit](https://redux-toolkit.js.org/) for consise redux code
+- [React Router](https://reactrouter.com/en/main) for routing
+- [Tailwind CSS](https://tailwindcss.com/)
 
-Styling and linting
+Formatting and linting
 
 - [Aribnb style Guide](https://airbnb.io/javascript/react/) for rules, standards and conventions
 - [Prettier](https://prettier.io/) for code formatting
@@ -54,7 +56,8 @@ Bundling and compiling
 
 Testing
 
-- TODO: Add testing library
+- [React testing library](https://testing-library.com/docs/react-testing-library/intro/) for rendering react components in tests
+- [Jest](https://jestjs.io/) for testing
 
 ## Other useful commands
 
