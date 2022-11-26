@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { getUser } from 'src/services/users';
-import { getUserRequest, getUserSuccess, getUserFailure } from 'src/slices/users';
+import { getUser } from 'services/users';
+import { getUserRequest, getUserSuccess, getUserFailure } from 'slices/users';
 
 function* getUserTask(action: { payload: string }) {
   const { payload } = action;

@@ -1,19 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+/* eslint-disable import/no-import-module-exports */
 import { Provider } from 'react-redux';
-import configureStore from './store';
-import 'src/assets/css/main.css';
-import 'src/assets/sass/main.scss';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+
+import 'assets/css/main.css';
 
 import App from './app';
+import createStore from './store';
 
-const { store } = configureStore();
+const store = createStore();
 function render() {
-  ReactDOM.render(
+  const container = document.getElementById('app');
+  const root = createRoot(container);
+  root.render(
     <Provider store={store}>
       <App />
     </Provider>,
-    document.getElementById('content'),
   );
 }
 

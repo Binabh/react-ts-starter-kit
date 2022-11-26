@@ -7,6 +7,6 @@ module.exports = () => {
     devServer: {
       open: true,
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()],
+    plugins: [],
   };
 };

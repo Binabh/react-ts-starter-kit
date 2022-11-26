@@ -1,6 +1,6 @@
 import React from 'react';
-import SvgViewer from 'src/components/common/SvgViewer';
-import ImageViewer from 'src/components/common/ImageViewer';
+import SvgViewer from 'components/common/SvgViewer';
+import ImageViewer from 'components/common/ImageViewer';
 
 export default function About() {
   return (

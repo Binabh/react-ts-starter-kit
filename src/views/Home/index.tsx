@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from 'src/slices/';
-import { getUserRequest } from 'src/slices/users';
+import { RootState } from 'slices/';
+import { getUserRequest } from 'slices/users';
 
 function Home() {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
       <h1>Home</h1>
-      <button type="button" onClick={() => dispatch(getUserRequest('ce5f60e2'))}>
+      <button type="button" onClick={() => dispatch(getUserRequest('octocat'))}>
         click to get data from api
       </button>
       {user.loading ? (
@@ -18,8 +18,6 @@ function Home() {
         <>
           <p>Name</p>
           <p>{user.user.name}</p>
-          <p>City</p>
-          <p>{user.user.city}</p>
         </>
       )}
     </>

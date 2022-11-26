@@ -10,5 +10,4 @@ function createReducer(injectedReducers = {}) {
 }
 const rootReducer = createReducer();
 export type RootState = ReturnType<typeof rootReducer>;
-
-export default createReducer;
+export default rootReducer;

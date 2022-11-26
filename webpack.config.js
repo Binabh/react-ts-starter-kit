@@ -1,7 +1,8 @@
 const path = require('path'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin'),
-  merge = require('webpack-merge'),
+  ESLintPlugin = require('eslint-webpack-plugin'),
+  { merge } = require('webpack-merge'),
   dotenv = require('dotenv').config(),
   devConfig = require('./config/webpack.dev.config'),
   prodConfig = require('./config/webpack.prod.config');
@@ -18,17 +19,11 @@ baseConfig = {
     filename: 'js/[name].bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.json', '.ts', '.tsx'],
-    alias: { src: APP_PATH },
+    modules: [APP_PATH, 'node_modules'],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.(ts|tsx|js)$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-      },
       {
         test: /\.(ts|tsx|js)$/,
         loader: 'babel-loader',
@@ -37,10 +32,6 @@ baseConfig = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.s(a|c)ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -67,6 +58,9 @@ baseConfig = {
     ],
   },
   plugins: [
+    new ESLintPlugin({
+      exclude: ['node_modules'],
+    }),
     new HtmlWebpackPlugin({
       template: TEMPLETE_PATH,
       filename: 'index.html',

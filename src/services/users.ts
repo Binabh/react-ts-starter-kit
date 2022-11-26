@@ -1,3 +1,3 @@
-import { api } from 'src/services/';
+import { api } from 'services/';
 
-export const getUser = (payload: string) => api.get(`/${payload}`);
+export const getUser = (payload: string) => api.get(`/users/${payload}`);

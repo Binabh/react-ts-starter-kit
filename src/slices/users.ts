@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface User {
-  city: string;
   name: string;
+  followers: number;
+  following: number;
 }
 
 export type UserState = {
@@ -12,8 +13,9 @@ export type UserState = {
 
 const initialState: UserState = {
   user: {
-    city: '',
     name: '',
+    followers: 0,
+    following: 0,
   },
   loading: false,
 };
@@ -26,8 +28,9 @@ const userSlice = createSlice({
       state.loading = true;
     },
     getUserSuccess(state, { payload }: PayloadAction<User>) {
-      state.user.city = payload.city;
       state.user.name = payload.name;
+      state.user.followers = payload.followers;
+      state.user.following = payload.following;
       state.loading = false;
     },
     getUserFailure(state) {
