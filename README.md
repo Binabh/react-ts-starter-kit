@@ -41,7 +41,7 @@ Here are list of libraries being used in this project:
 - [Axios](https://github.com/axios/axios) for making api calls
 - [Redux Toolkit](https://redux-toolkit.js.org/) for consise redux code
 - [React Router](https://reactrouter.com/en/main) for routing
-- [Tailwind CSS](https://tailwindcss.com/)
+- [Tailwind CSS](https://tailwindcss.com/) for styling
 
 Formatting and linting
 

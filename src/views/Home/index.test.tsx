@@ -9,8 +9,8 @@ import { renderWithProviders } from 'utils/testing';
 import Home from '.';
 
 // We use msw to intercept the network request during the test,
-// and return the response 'John Smith' after 150ms
-// when receiving a get request to the `/api/user` endpoint
+// and return the response { name: 'The Octocat', followers: 7641, following: 9 } after 150ms
+// when receiving a get request to the 'https://api.github.com/users/octocat' endpoint
 const handlers = [
   rest.get('https://api.github.com/users/octocat', (req, res, ctx) =>
     res(ctx.json({ name: 'The Octocat', followers: 7641, following: 9 }), ctx.delay(150)),
