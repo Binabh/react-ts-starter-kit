@@ -3,12 +3,14 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from 'sagas';
 import rootReducer from 'slices';
 import { configureStore } from '@reduxjs/toolkit';
+import type { PreloadedState } from '@reduxjs/toolkit';
 
 const sagaMiddleware = createSagaMiddleware();
 
-export default function createStore() {
+export default function createStore(preloadedState?: PreloadedState<typeof rootReducer>) {
   const store = configureStore({
     reducer: rootReducer,
+    preloadedState,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
   });
   let sagaTask = sagaMiddleware.run(rootSaga);

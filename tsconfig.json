@@ -10,7 +10,8 @@
     "outDir": "./build/",
     "preserveConstEnums": true,
     "removeComments": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "types": ["node", "jest", "@testing-library/jest-dom", "webpack-env"]
   },
   "exclude": ["node_modules", "dist"],
   "include": ["src"]

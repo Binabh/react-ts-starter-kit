@@ -10,7 +10,7 @@ function Home() {
     <>
       <h1 className="text-red-600">Home</h1>
       <button type="button" onClick={() => dispatch(getUserRequest('octocat'))}>
-        click to get data from api
+        Get User
       </button>
       {user.loading ? (
         'getting data...'
