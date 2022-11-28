@@ -9,7 +9,11 @@ function Home() {
   return (
     <>
       <h1 className="text-red-600">Home</h1>
-      <button type="button" onClick={() => dispatch(getUserRequest('octocat'))}>
+      <button
+        className="bg-green-400 p-2 rounded text-center text-white"
+        type="button"
+        onClick={() => dispatch(getUserRequest('octocat'))}
+      >
         Get User
       </button>
       {user.loading ? (
